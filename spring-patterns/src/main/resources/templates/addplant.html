@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+AddPlant
+<form action="#" th:action="@{/saveplant}" th:object="${plant}" method="GET">
+Genus: <input type="text" name="genus" th:field="*{genus}"/><br/>
+Species: <input type="text" name="species" th:field="*{species}"/><br/>
+Cultivar: <input type="text" name="cultivar" th:field="*{cultivar}"/><br/>
+Common: <input type="text" name="common" th:field="*{common}"/><br/>
+	<div th:each="component : ${components}">
+    	<div th:replace="${component} :: content">
+    		Content
+		</div>
+    </div>
+    Width: <input type="text" name="width" />
+    <button name="submit" type="submit" value="0">Submit</button>
+    </form>
+</body>
+</html>
+
